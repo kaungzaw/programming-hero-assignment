@@ -10,7 +10,10 @@ type AuthState = {
 const useAuthStore = create<AuthState>((set) => ({
   isLoading: false,
   getUsername: () => {
-    return localStorage.getItem("username");
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("username");
+    }
+    return null;
   },
   signIn: async (username, password) => {
     set(() => ({ isLoading: true }));
