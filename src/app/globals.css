@@ -1,33 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.main-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.form-container {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sign-in-container {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .sign-in-container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .list-item {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .ant-list-item-action {
+    margin-inline-start: 0px !important;
   }
 }
